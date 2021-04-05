@@ -1,30 +1,64 @@
 const express = require('express')
 const app = express()
 
-const notes = [
-	'Some awesome note 1',
-	'Some awesome note 2',
-	'Some awesome note 3'
-]
-
-app.use('/static', express.static('public'))
+const fs = require('fs')
 
 app.set('view engine', 'pug')
+app.use('/static', express.static('public'))
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
+	fs.readFile('./data/todos.json', (err, data) => {
+		if (err) throw err
+
+		const todos = JSON.parse(data)
+
+		res.render('home', { todos: todos })
+	})
+
 	res.render('home')
 })
 
-app.get('/create', (req, res) => {
-	res.render('create')
-})
+app.post('/add', (req, res) => {
+	const formData = req.body
 
-app.get('/notes', (req, res) => {
-	res.render('notes', { n: notes })
-})
+	if (formData.todo.trim() == '') {
+		fs.readFile('./data/todos.json', (err, data) => {
+			if (err) throw err
 
-app.get('/notes/1', (req, res) => {
-	res.render('detail')
+			const todos = JSON.parse(data)
+
+			res.render('home', { error: true, todos: todos })
+		})
+	}
+
+	else {
+		fs.readFile('./data/todos.json', (err, data) => {
+			if (err) throw err
+
+			const todos = JSON.parse(data)
+
+			const todo = {
+				id: id(),
+				description: formData.todo,
+				done: false
+			}
+
+			todos.push(todo)
+
+			fs.writeFile('./data/todos.json', JSON.stringify(todos), (err) => {
+				if (err) throw err
+
+				fs.readFile('./data/todos.json', (err, data) => {
+					if (err) throw err
+
+					const todos = JSON.parse(data)
+
+					res.render('home', { success: true, todos: todos })
+				})
+			})
+		})
+	}
 })
 
 app.listen(8000, err => {
@@ -32,3 +66,7 @@ app.listen(8000, err => {
 
 	console.log('App is running...')
 })
+
+function id () {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};

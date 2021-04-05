@@ -1,5 +1,5 @@
 :root {
-	font-size: 18px;
+	font-family: 'Crimson Text', serif;
 }
 
 * {
@@ -8,93 +8,76 @@
 	box-sizing: border-box;
 }
 
-a {
-	text-decoration: none;
-	color: #444;
-}
-
-a:hover {
-	color: tomato;
-}
-
-.header,
 .container {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.header {
-	max-width: 1000px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	border-bottom: 1px solid #ccc;
-}
-
-nav > a {
-	display: inline-block;
-	padding: 10px 20px;
+	max-width: 800px;
+	margin: 50px auto;
 }
 
 .logo {
-	padding: 10px 20px;
-}
-
-.intro-msg {
-	margin-top: 150px;
-	padding: 20px;
-	font-size: 3.5rem;
-}
-
-.featured {
-	margin-left: 20px;
-	padding: 10px 20px;
-	font-size: 1.3rem;
-	display: inline-block;
-	background: tomato;
-	color: #fff;
-	border: none;	
-}
-
-.page-title,
-.form {
-	margin-left: 20px;
-}
-
-.page-title {
-	margin-top: 20px;
-	margin-bottom: 40px;
+	text-align: center;
+	font-size: 4rem;
+	padding-bottom: 40px;
 }
 
 .form {
-	max-width: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .input {
-	display: block;
-	width: 100%;
-	font-size: 1.3rem;
+	display: inline-block;
+	width: 80%;
+	font-size: 1.5rem;
 	padding: 10px;
 	border: 1px solid #ccc;
-	margin-bottom: 10px;
+	font-family: inherit;
 }
 
 .btn {
 	display: inline-block;
-	padding: 10px 20px;
-	background: tomato;
+	padding: 15px 30px;
+	font-size: 1.5rem;
+	background: green;
 	color: #fff;
+	width: 15%;
 	border: none;
 }
 
-.notes {
-	margin: 20px 0 0 20px;
+.todos {
+	margin-top: 25px;
+	border: 1px solid #ccc;
+	padding: 10px;
 }
 
-.note {
-	display: block;
-	padding: 15px 0;
+.todo {
+	padding: 10px;
 	font-size: 1.5rem;
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.todo:last-child {
+	border-bottom: none;
+}
+
+.todo:hover {
+	background: #ddd;
+}
+
+.err {
+	text-align: center;
+	color: red;
+	font-size: 1.3rem;
+	border: none;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.success {
+	text-align: center;
+	color: green;
+	font-size: 1.3rem;
+	border: none;
+	padding: 10px;
+	margin-bottom: 10px;
 }

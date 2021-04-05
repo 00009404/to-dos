@@ -2,6 +2,6 @@ extends layout.pug
 
 block content
   main.container
-    h1.page-title Some awesome note
-    p.body
-      | fodfjjfmvlfkgfd vfvfdknfkgnfg dfdgllgkc,v fk dfgnfkgnkvncnbfkngkvb dkgnfvncknfkgnlvn dfgnfkgnsdlgncbklnf dkngklvnkfdgnfknb knvckbn fodfjjfmvlfkgfd vfvfdknfkgnfg dfdgllgkc,v fk dfgnfkgnkvncnbfkngkvb dkgnfvncknfkgnlvn dfgnfkgnsdlgncbklnf dkngklvnkfdgnfknb knvckbn fodfjjfmvlfkgfd vfvfdknfkgnfg dfdgllgkc,v fk dfgnfkgnkvncnbfkngkvb dkgnfvncknfkgnlvn dfgnfkgnsdlgncbklnf dkngklvnkfdgnfknb knvckbn fodfjjfmvlfkgfd vfvfdknfkgnfg dfdgllgkc,v fk dfgnfkgnkvncnbfkngkvb dkgnfvncknfkgnlvn dfgnfkgnsdlgncbklnf dkngklvnkfdgnfknb knvckbn fodfjjfmvlfkgfd vfvfdknfkgnfg dfdgllgkc,v fk dfgnfkgnkvncnbfkngkvb dkgnfvncknfkgnlvn dfgnfkgnsdlgncbklnf dkngklvnkfdgnfknb knvckbn
+    h1.page-title #{ note.title }
+    p.body #{ note.description }
+    span #{ note.created }
