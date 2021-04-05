@@ -6,7 +6,7 @@ This Web Application is created for organizing tasks with a list which helps to 
 1.Download the source code
 
 ```bash
-git clone [url to the github repo]
+git clone https://github.com/00009404/to-dos.git
 ```
 or dowload the .zip file
 
@@ -25,4 +25,4 @@ node app
 2. pug
 
 #### Link to the GitHub Repository
-[url to the github repo]
+https://github.com/00009404/to-dos.git
