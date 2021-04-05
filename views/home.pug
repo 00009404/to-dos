@@ -2,17 +2,26 @@ extends layout.pug
 
 block content
   if error
-    p.err Please fill in the input
+    p.err Please put the input
 
   if success
     p.success Added!
+
+  if deleted
+    p.success Deleted!
+  
   form.form(action='/add' method='POST')
     input.input(type='text' placeholder='to-do task description' name='todo')
     button.btn Add
 
   div.todos
-    if todos
+    if todos.length
       each todo in todos
-        p.todo #{ todo.description }
+        p.todo
+          if todo.done
+            a.done(href=`/${ todo.id }/update`) #{ todo.description }
+          else
+            a.undone(href=`/${ todo.id }/update`) #{ todo.description }
+          a.delete(href=`/${ todo.id }/delete`) Delete
     else
       p.todo No any to-do task created
