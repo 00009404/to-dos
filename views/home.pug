@@ -7,7 +7,7 @@ block content
   if success
     p.success Added!
   form.form(action='/add' method='POST')
-    input.input(type='text' placeholder='TODO description' name='todo')
+    input.input(type='text' placeholder='to-do task description' name='todo')
     button.btn Add
 
   div.todos
@@ -15,4 +15,4 @@ block content
       each todo in todos
         p.todo #{ todo.description }
     else
-      p.todo No any todo created
+      p.todo No any to-do task created
