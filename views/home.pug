@@ -2,20 +2,23 @@ extends layout.pug
 
 block content
   if error
-    p.err Please put the input
+    p.err &#9759; Please put the input! &#9759;
 
   if success
-    p.success Added!
+    p.success &#9787; Added! &#9787;
 
   if deleted
-    p.success Deleted!
+    p.success &#10004; Deleted! &#10004;
+
+  if updated
+    p.success &#9997; The task is done! &#9997;
   
   form.form(action='/add' method='POST')
     input.input(type='text' placeholder='to-do task description' name='todo')
     button.btn Add
 
   div.todos
-    if todos.length
+    if todos && todos.length
       each todo in todos
         p.todo
           if todo.done
@@ -24,4 +27,4 @@ block content
             a.undone(href=`/${ todo.id }/update`) #{ todo.description }
           a.delete(href=`/${ todo.id }/delete`) Delete
     else
-      p.todo No any to-do task created
+      p.todo no any to-do task created 

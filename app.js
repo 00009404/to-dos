@@ -98,7 +98,7 @@ app.get('/:id/update', (req, res) => {
 		fs.writeFile('./data/todos.json', JSON.stringify(todos), (err) => {
 			if (err) throw err
 
-			res.render('home', { todos: todos })
+			res.render('home', { todos: todos, updated: true })
 		})
 	})
 })

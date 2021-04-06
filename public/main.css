@@ -8,6 +8,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: #A7C1CF;
+}
+
 .container {
 	max-width: 800px;
 	margin: 50px auto;
@@ -16,7 +20,7 @@
 .logo {
 	text-align: center;
 	font-size: 4rem;
-	padding-bottom: 40px;
+	padding-bottom: 50px;
 }
 
 .form {
@@ -30,7 +34,7 @@
 	width: 80%;
 	font-size: 1.5rem;
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #5D9DC1;
 	font-family: inherit;
 }
 
@@ -38,7 +42,7 @@
 	display: inline-block;
 	padding: 15px 30px;
 	font-size: 1.5rem;
-	background: green;
+	background: #5D9DC1;
 	color: #fff;
 	width: 15%;
 	border: none;
@@ -46,7 +50,7 @@
 
 .todos {
 	margin-top: 25px;
-	border: 1px solid #ccc;
+	border: 1px solid #5D9DC1;
 	padding: 10px;
 }
 
@@ -56,7 +60,7 @@
 	align-items: center;
 	padding: 10px;
 	font-size: 1.5rem;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #5D9DC1;
 }
 
 .todo:last-child {
@@ -64,13 +68,13 @@
 }
 
 .todo:hover {
-	background: #ddd;
+	background: #5D9DC1;
 }
 
 .err {
 	text-align: center;
 	color: red;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	border: none;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -79,7 +83,7 @@
 .success {
 	text-align: center;
 	color: green;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	border: none;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -87,7 +91,7 @@
 
 .delete {
 	text-decoration: none;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	padding: 7px 15px;
 	background: red;
 	color: #fff;
@@ -101,4 +105,9 @@
 
 .done {
 	text-decoration: line-through;
+}
+
+.footer {
+	text-align: center;
+	font-size: 1.5rem;
 }
